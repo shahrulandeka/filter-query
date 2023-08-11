@@ -22,39 +22,57 @@ At the end of this lab, I have practical experience in using SQL to: <br/>
 
 <p align="center">
 Launch the utility: <br/>
-For this scenario, I'm finding more information about commands that I need to use. <br/>
-I also need to discover which command to use to perform a certain task. <br/>
-First, I'll explore a few commands I can use in the shell to learn more about other commands. <br/>
-Next, I'll find an option i need to add to a command. <br/>
-Third, I'll use a command to get a brief description of command so I can identify their differences. <br/>
-Finally, I'll identify the command I need to perform a task. <br/>
+For this scenario, I need to get specific information about employees, their machines, and the departments they're in. <br/>
+My team needs this data to perform task suchs as running updates, posting a privacy notice in certain departments, <br/>
+ and sending an alert to an employee with an issue on a machine. <br/>
+First, I'll list all organization machines and their operating systems. <br/>
+Next, I'll list all machines with the operating system OS 2. <br/>
+Third, I'll list all the employees in the Finance and Sales department. <br/>
+Finally, I'll obtain information about machines. <br/>
 
 <img src="https://i.imgur.com/ZChRTsk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-1. : <br/>
-
+1. For this task, I need to get a list of all organization machines and their operating system: <br/>
+To do so, type in: <br/>
+SELECT * <BR/>
+FROM machines <br/>
+ORDER BY device_id, operating_system;
 <img src="https://i.imgur.com/Oo3ixiT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-2. : <br/>
+2. For this task, I need to obtain a list of all machines with the "OS 2" operating system because these machines need an update: <br/>
+To get this information, I run an SQL query with a filter: <br/>
+SELECT device_id, operating_system <Br/>
+FROM machines <br/>
+WHERE operating_system = 'OS 2';
 <img src="https://i.imgur.com/cZyh3JK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-3. : <br/>
+3. For this task, I want to list employees specifically from the FINANCE deparment: <br/>
+To do so, type in: <br/>
+SELECT * <Br/>
+FROM employees <br/>
+WHERE department = 'Finance';
 
 <img src="https://i.imgur.com/APUuAj0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-4. :  <br/>
+4. Now in relation to the above task, do the same but list employees from the SALES department:  <br/>
 <img src="https://i.imgur.com/WbBt8a8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-5. :  <br/>
+5. For this task, I need to obtain certain employee and computer information, specifically from the South building:  <br/>
+I've identified that a machine in 'South-109' has an issue. I need to determine which employee uses the computer <br/>
+so I can send them an alert. <br/>
+The query I would write would be: <br/>
+SELECT * <BR/>
+FROM employees
+WHERE office = 'South-109';
 <img src="https://i.imgur.com/KcjoDMa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-6. :  <br/>
+6. Just the same as the above task, but this time I use the "LIKE" operator with the "%" wildcard:  <br/>
 <img src="https://i.imgur.com/Uxba9sg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
